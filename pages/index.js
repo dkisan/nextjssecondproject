@@ -1,5 +1,7 @@
 import { MongoClient } from "mongodb";
 import MeetupList from "../components/meetups/MeetupList";
+import { Fragment } from "react";
+import Head from "next/head";
 
 
 const Home = (props) => {
@@ -19,7 +21,14 @@ const Home = (props) => {
     //         description: 'second description'
     //     },
     // ]
-    return <MeetupList meetups={props.meetups} />
+    return <Fragment>
+        <Head>
+            <title>Meetups</title>
+            <meta name="description"
+                value="nextjs implemented" />
+        </Head>
+        <MeetupList meetups={props.meetups} />
+    </Fragment>
 
 }
 

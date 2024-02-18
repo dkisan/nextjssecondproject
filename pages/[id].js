@@ -1,4 +1,5 @@
 import { MongoClient, ObjectId } from "mongodb";
+import Head from "next/head";
 import { Fragment } from "react";
 
 const MeeupDetails = (props) => {
@@ -26,6 +27,11 @@ const MeeupDetails = (props) => {
 
     return (
         <Fragment>
+            <Head>
+                <title>{props.meetupData.title}</title>
+                <meta name="description"
+                    value={props.meetupData.description} />
+            </Head>
             <img src={props.meetupData.image} />
             <h3>{props.meetupData.title}</h3>
             <address>{props.meetupData.address}</address>

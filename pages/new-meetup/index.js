@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 import NewMeetupForm from '../../components/meetups/NewMeetupForm'
+import { Fragment } from 'react'
+import Head from 'next/head'
 
 const NewMeetup = () => {
     const router = useRouter()
@@ -15,7 +17,14 @@ const NewMeetup = () => {
     }
 
 
-    return <NewMeetupForm onAddMeetup={addMeetupHandler} />
+    return <Fragment>
+        <Head>
+            <title>Meetup Form</title>
+            <meta name="description"
+                value="meetup form" />
+        </Head>
+        <NewMeetupForm onAddMeetup={addMeetupHandler} />
+    </Fragment>
 }
 
 export default NewMeetup;
